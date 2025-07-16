@@ -1,0 +1,148 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: url('bg.jpg');
+  background-size: cover;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+}
+
+h1 {
+  margin-bottom: 0.5rem;
+  color: #000;
+}
+
+#message {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: black;
+}
+
+.box {
+  display: grid;
+  grid-template-columns: repeat(3, 6rem);
+  grid-template-rows: repeat(3, 6rem);
+  gap: 3px;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+
+.item {
+  background: #2c3e50;
+  border: 2px solid #34495e;
+  font-size: 2.5rem;
+  color: white;
+  display: flex;
+  border-radius: 7px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s;
+  box-shadow:  0 0 7px red;
+}
+
+.item:hover {
+  background: #3d566e;
+}
+
+.item.x {
+  color: #f39c12;
+}
+
+.item.o {
+  color: #3498db;
+}
+
+#reset , .popup button {
+  background: #fff;
+  color: #000;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+  box-shadow: 0 0 15px ;
+}
+
+#reset:hover {
+  background: #e0e0e0;
+}
+
+.overlay{
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.popup{
+  text-align: center;
+  border-radius: 1rem;
+  padding: 2rem 1rem;
+  background-color: #fff;
+  color: #000;
+  border: 2px solid;
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  z-index: 10;
+  transform: translate(-50% ,-50%) scale(0.1);
+}
+@keyframes popup {
+  0%{
+    top: -50px;
+    transform: translate(-50% ,-50%) scale(0.1);
+    
+  }
+  100%{
+    top: 50%;
+    transform: translate(-50% ,-50%) scale(1);
+  }
+}
+
+.showpopup{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% ,-50%) scale(1);
+  animation: popup 0.7s ease-in-out;
+}
+
+.popup img{
+  height: 100px;
+  width: 100px;
+  margin-top: -150px;
+}
+.popup button{
+  background-color: green;
+  color: #fff;
+  padding: 1rem 4rem;
+}
+
+@media (max-width:450px) {
+  .container {
+    position: absolute;
+    top: 3rem;
+  }
+}
